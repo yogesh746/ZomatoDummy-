@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-const ViewCart = () => {
+const viewcart = () => {
   return (
     <View>
       <Text
@@ -16,6 +16,6 @@ const ViewCart = () => {
   );
 };
 
-export default ViewCart;
+export default viewcart;
 
 const styles = StyleSheet.create({});
