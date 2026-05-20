@@ -11,19 +11,11 @@ import Product from "@/components/Product";
 import TwoCards from "@/components/TwoCards";
 import { appColors } from "@/constants/colors";
 import { strings } from "@/constants/strings";
-import { BannerItem, FilterItem, restaurentItems } from "@/types/types";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+import useFoodData from "@/hooks/useFoodData";
+import { BannerItem, FilterItem } from "@/types/types";
 import { router } from "expo-router";
 import { useState } from "react";
-import {
-  ActivityIndicator,
-  FlatList,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
-import useFoodData from "@/hooks/useFoodData";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 
 export default function Home() {
   const [search, setSearch] = useState("");
@@ -119,6 +111,11 @@ export default function Home() {
                   big={item.big}
                   discount={item.discount}
                   text={item.text}
+                  onPress={() => {
+                    router.push({
+                      pathname: "/no_Tabs/ViewCart",
+                    });
+                  }}
                 />
               );
             }}

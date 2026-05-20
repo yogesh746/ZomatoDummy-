@@ -1,6 +1,6 @@
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import arrow from "../assets/images/arrow.png";
 import girlImg from "../assets/images/girlImg.png";
 import secondCardImg from "../assets/images/secondCardImg.png";
@@ -9,27 +9,29 @@ import { appColors } from "@/constants/colors";
 const TwoCards = (props) => {
   return (
     <View style={styles.container}>
-      <LinearGradient
-        style={styles.leftCardView}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 1 }}
-        colors={[appColors.red, appColors.orange]}
-      >
-        <View style={styles.leftTextsOfLeft}>
-          <Text style={styles.textOfUpTo}>{props?.upTo}</Text>
-          <Text style={styles.textOfPercentOff}>{props?.percentOff}</Text>
-          <View style={styles.line} />
-          <Text style={styles.textOfNoCooking}>{props.nocook}</Text>
-          <Text style={styles.textOfjuly}>{props.july}</Text>
-          <View style={styles.viewOfArrow}>
-            <Image source={arrow} style={styles.arrow} />
+      <TouchableOpacity onPress={props.onPress}>
+        <LinearGradient
+          style={styles.leftCardView}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          colors={[appColors.red, appColors.orange]}
+        >
+          <View style={styles.leftTextsOfLeft}>
+            <Text style={styles.textOfUpTo}>{props?.upTo}</Text>
+            <Text style={styles.textOfPercentOff}>{props?.percentOff}</Text>
+            <View style={styles.line} />
+            <Text style={styles.textOfNoCooking}>{props.nocook}</Text>
+            <Text style={styles.textOfjuly}>{props.july}</Text>
+            <View style={styles.viewOfArrow}>
+              <Image source={arrow} style={styles.arrow} />
+            </View>
           </View>
-        </View>
 
-        <View>
-          <Image source={girlImg} style={styles.girlImg} />
-        </View>
-      </LinearGradient>
+          <View>
+            <Image source={girlImg} style={styles.girlImg} />
+          </View>
+        </LinearGradient>
+      </TouchableOpacity>
 
       <LinearGradient
         style={styles.leftCardView}
