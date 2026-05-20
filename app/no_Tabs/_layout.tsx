@@ -13,6 +13,7 @@ export default function NoTabs() {
       }}
     >
       <Stack.Screen name="ProductDetails" options={{ headerShown: false }} />
+      <Stack.Screen name="ViewCart" options={{ headerShown: false }} />
     </Stack>
   );
 }
